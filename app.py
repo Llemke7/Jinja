@@ -20,6 +20,6 @@ def show_story():
     if request.method == 'POST':
         answers = {prompt: request.form[prompt] for prompt in story.prompts}
         text = story.generate(answers)
-        print("Generated Story:", text)  # Add this line for debugging
+        print("Generated Story:", text)  
         return render_template("story.html", text=text)
     return render_template("story.html", text='')
