@@ -1,0 +1,16 @@
+{% extends "basic.html" %}
+
+{% block title %}
+    Questions
+{% endblock %}
+
+{% block content %}
+    <form action="/story" method="post">
+        {% for prompt in prompts %}
+            <p>{{ prompt }}:
+                <input type="text" name="{{ prompt }}">
+            </p>
+        {% endfor %}
+        <input type="submit" value="Generate Story">
+    </form>
+{% endblock %}
